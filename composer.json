@@ -1,7 +1,7 @@
 {
     "name": "interpro/seo",
-    "description": "Простые типы универсальное быстроразворачиваемое хранилище.",
-    "version": "1.0.1",
+    "description": "Поля строки для seo.",
+    "version": "1.0.2",
     "require": {
         "interpro/core": "1.0.*",
         "interpro/extractor": "1.0.*"
