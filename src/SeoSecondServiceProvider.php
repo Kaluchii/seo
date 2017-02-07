@@ -37,7 +37,7 @@ class SeoSecondServiceProvider extends ServiceProvider
                          DestructMediator $destructMediator,
                          Tuner $tuner)
     {
-        Log::info('Загрузка SeoSecondServiceProvider');
+        //Log::info('Загрузка SeoSecondServiceProvider');
 
         //Фабрике нужен медиатор мапперов и строитель item'ов простых типов, QS мапперу нужна фабрика
         $factory = new SeoItemFactory();
@@ -69,7 +69,7 @@ class SeoSecondServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Log::info('Регистрация SeoSecondServiceProvider');
+        //Log::info('Регистрация SeoSecondServiceProvider');
 
         $config = config('interpro.seo', []);
 

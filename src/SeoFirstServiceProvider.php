@@ -13,7 +13,7 @@ class SeoFirstServiceProvider extends ServiceProvider
      */
     public function boot(Dispatcher $dispatcher)
     {
-        Log::info('Загрузка SeoFirstServiceProvider');
+        //Log::info('Загрузка SeoFirstServiceProvider');
 
         $this->publishes([__DIR__.'/config/seo.php' => config_path('interpro/seo.php')]);
 
@@ -27,7 +27,7 @@ class SeoFirstServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Log::info('Регистрация SeoFirstServiceProvider');
+        //Log::info('Регистрация SeoFirstServiceProvider');
 
         $forecastList = $this->app->make('Interpro\Core\Contracts\Taxonomy\TypesForecastList');
 
