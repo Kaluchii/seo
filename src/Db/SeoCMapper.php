@@ -5,6 +5,7 @@ namespace Interpro\Seo\Db;
 use Illuminate\Support\Facades\DB;
 use Interpro\Core\Contracts\Ref\ARef;
 use Interpro\Core\Contracts\Taxonomy\Types\AType;
+use Interpro\Core\Helpers;
 use Interpro\Core\Taxonomy\Enum\TypeRank;
 use Interpro\Extractor\Contracts\Db\CMapper;
 use Interpro\Extractor\Contracts\Selection\SelectionUnit;
@@ -94,7 +95,7 @@ class SeoCMapper implements CMapper
         $query->where('seos.entity_name', '=', $owner_name);
         $query->where('seos.entity_id', '=', $owner_id);
 
-        $result = $query->get(['entity_name', 'entity_id', 'name', 'value']);
+        $result = Helpers::laravel_db_result_to_array($query->get(['entity_name', 'entity_id', 'name', 'value']));
 
         $this->addResultToCollection($ownerType, $collection, $result);
 
@@ -129,7 +130,7 @@ class SeoCMapper implements CMapper
             $query->whereIn('seos.entity_id', $selectionUnit->getIdSet());
         }
 
-        $result = $query->get(['entity_name', 'entity_id', 'name', 'value']);
+        $result = Helpers::laravel_db_result_to_array($query->get(['entity_name', 'entity_id', 'name', 'value']));
 
         $this->addResultToCollection($ownerType, $collection, $result);
 
