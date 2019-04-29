@@ -40,7 +40,8 @@ class UpdateExecutor implements CUpdateExecutor
 
         if(!is_string($value))
         {
-            throw new UpdateException('Seo поле '.$own_name.' типа '.$own_type_name.' должно быть задано строкой!');
+            $value = '';
+            //throw new UpdateException('Seo поле '.$own_name.' типа '.$own_type_name.' должно быть задано строкой!');
         }
 
         $field = Seo::firstOrNew(['entity_name' => $type_name, 'entity_id' => $id, 'name' => $own_name]);
